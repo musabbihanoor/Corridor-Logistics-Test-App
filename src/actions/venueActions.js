@@ -28,7 +28,7 @@ export const fetchVenues = () => {
     axios
       .get(ENDPOINT)
       .then((response) => {
-        const venues = response.data;
+        const venues = response.data.results;
         dispatch(fetchVenuesSuccess(venues));
       })
       .catch((error) => {

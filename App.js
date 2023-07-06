@@ -4,13 +4,19 @@ import { StyleSheet, Text, View } from "react-native";
 import { Provider } from "react-redux";
 import store from "./src/store";
 
+import { NavigationContainer } from "@react-navigation/native";
+import TabNavigator from "./src/navigator/TabNavigator";
+
 export default function App() {
   return (
     <Provider store={store}>
-      <View style={styles.container}>
+      {/* <View style={styles.container}>
         <Text>See I am working!</Text>
         <StatusBar style="auto" />
-      </View>
+      </View> */}
+      <NavigationContainer>
+        <TabNavigator />
+      </NavigationContainer>
     </Provider>
   );
 }
