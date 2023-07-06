@@ -7,7 +7,7 @@ import store from "./src/store";
 import { NavigationContainer } from "@react-navigation/native";
 import TabNavigator from "./src/navigator/TabNavigator";
 
-export default function App() {
+const App = () => {
   return (
     <Provider store={store}>
       {/* <View style={styles.container}>
@@ -19,7 +19,7 @@ export default function App() {
       </NavigationContainer>
     </Provider>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -29,3 +29,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
+
+export default App;
