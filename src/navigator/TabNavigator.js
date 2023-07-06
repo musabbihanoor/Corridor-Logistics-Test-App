@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign, FontAwesome } from "@expo/vector-icons";
 import HomeScreen from "../screens/HomeScreen";
 import MapScreen from "../screens/MapScreen";
+import DetailsScreen from "../screens/DetailsScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -35,6 +36,12 @@ const TabNavigator = () => {
     >
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Map" component={MapScreen} />
+
+      <Tab.Screen
+        name="Details"
+        component={DetailsScreen}
+        options={{ tabBarButton: () => null }}
+      />
     </Tab.Navigator>
   );
 };
