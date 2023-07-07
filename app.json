@@ -23,10 +23,16 @@
       "permissions": [
         "ACCESS_COARSE_LOCATION",
         "ACCESS_FINE_LOCATION"
-      ]
+      ],
+      "package": "com.musabbihanoor.cltesttask"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "20cfaeac-b16e-47f2-a126-dc52015e2e2d"
+      }
     }
   }
 }
