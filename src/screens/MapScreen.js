@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Text, Image } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 
 import { connect } from "react-redux";
@@ -27,8 +27,19 @@ const MapScreen = ({ venues, loading, error, fetchVenues }) => {
               key={i}
               coordinate={{ latitude: x.lat, longitude: x.lon }}
               title={x.name}
-              // description="Marker Description"
-            />
+              description={x.address}
+            >
+              <Image
+                source={{ uri: x.featured_image }}
+                style={{
+                  height: 30,
+                  width: 30,
+                  borderRadius: 50,
+                  borderColor: "red",
+                  borderWidth: 3,
+                }}
+              />
+            </Marker>
           ))}
       </MapView>
     </View>
