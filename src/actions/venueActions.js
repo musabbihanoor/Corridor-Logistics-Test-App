@@ -5,6 +5,7 @@ import { ENDPOINT } from "../constants";
 export const FETCH_VENUES_REQUEST = "FETCH_VENUES_REQUEST";
 export const FETCH_VENUES_SUCCESS = "FETCH_VENUES_SUCCESS";
 export const FETCH_VENUES_FAILURE = "FETCH_VENUES_FAILURE";
+export const SET_VENUE = "SET_VENUE";
 
 // Action Creators
 export const fetchVenuesRequest = () => ({
@@ -36,3 +37,8 @@ export const fetchVenues = () => {
       });
   };
 };
+
+export const setVenue = (venue) => ({
+  type: SET_VENUE,
+  payload: venue,
+});

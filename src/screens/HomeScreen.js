@@ -5,10 +5,15 @@ import VenueCards from "../components/VenueCards";
 import { useNavigation } from "@react-navigation/native";
 
 import { connect } from "react-redux";
-import { fetchVenues } from "../actions/venueActions";
+import { fetchVenues, setVenue } from "../actions/venueActions";
 
-const HomeScreen = ({ venues, loading, error, fetchVenues }) => {
+const HomeScreen = ({ venues, loading, error, fetchVenues, setVenue }) => {
   const navigation = useNavigation();
+
+  const onSelect = (item) => {
+    setVenue(item);
+    navigation.navigate("Details");
+  };
 
   useEffect(() => {
     fetchVenues();
@@ -16,7 +21,7 @@ const HomeScreen = ({ venues, loading, error, fetchVenues }) => {
 
   return (
     <View>
-      <VenueCards data={venues} />
+      <VenueCards data={venues} onSelect={onSelect} />
     </View>
   );
 };
@@ -27,4 +32,4 @@ const mapStateToProps = (state) => ({
   error: state.venues.error,
 });
 
-export default connect(mapStateToProps, { fetchVenues })(HomeScreen);
+export default connect(mapStateToProps, { fetchVenues, setVenue })(HomeScreen);

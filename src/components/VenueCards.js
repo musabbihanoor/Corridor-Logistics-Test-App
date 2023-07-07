@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
 import { View, Text } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
-import CarouselCardItem, { SLIDER_WIDTH, ITEM_WIDTH } from "./VenueCardItem";
+import VenueCardItem, { SLIDER_WIDTH, ITEM_WIDTH } from "./VenueCardItem";
 
-const VenueCards = ({ data }) => {
+const VenueCards = ({ data, onSelect }) => {
   const isCarousel = useRef(null);
   const [index, setIndex] = useState(0);
 
@@ -32,7 +32,9 @@ const VenueCards = ({ data }) => {
         layoutCardOffset={9}
         ref={isCarousel}
         data={data}
-        renderItem={CarouselCardItem}
+        renderItem={({ item }) => (
+          <VenueCardItem item={item} onSelect={onSelect} />
+        )}
         sliderWidth={SLIDER_WIDTH}
         itemWidth={ITEM_WIDTH}
         inactiveSlideShift={0}

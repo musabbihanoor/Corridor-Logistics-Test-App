@@ -11,13 +11,13 @@ import {
 export const SLIDER_WIDTH = Dimensions.get("window").width + 80;
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7);
 
-const VenueCardItemCardItem = ({ item, index }) => {
+const VenueCardItem = ({ item, index, onSelect }) => {
   return (
     <View style={styles.container} key={index}>
       <Image source={{ uri: item.featured_image }} style={styles.image} />
       <Text style={styles.header}>{item.name}</Text>
       <Text style={styles.body}>{item.address}</Text>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => onSelect(item)}>
         <Text style={styles.btn}>View More</Text>
       </TouchableOpacity>
     </View>
@@ -64,4 +64,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default VenueCardItemCardItem;
+export default VenueCardItem;

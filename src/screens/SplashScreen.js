@@ -6,7 +6,7 @@ const Splash = ({ onFinish }) => {
   useEffect(() => {
     const init = async () => {
       try {
-        await SplashScreen.preventAutoHideAsync();
+        // await SplashScreen.preventAutoHideAsync();
         onFinish();
       } catch (error) {
         console.warn(error);
