@@ -14,9 +14,11 @@ export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7);
 const VenueCardItem = ({ item, index, onSelect }) => {
   return (
     <View style={styles.container} key={index}>
-      <Image source={{ uri: item.featured_image }} style={styles.image} />
-      <Text style={styles.header}>{item.name}</Text>
-      <Text style={styles.body}>{item.address}</Text>
+      <View>
+        <Image source={{ uri: item.featured_image }} style={styles.image} />
+        <Text style={styles.header}>{item.name}</Text>
+        <Text style={styles.body}>{item.address}</Text>
+      </View>
       <TouchableOpacity onPress={() => onSelect(item)}>
         <Text style={styles.btn}>View More</Text>
       </TouchableOpacity>
@@ -38,6 +40,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.29,
     shadowRadius: 4.65,
     elevation: 7,
+    marginHorizontal: 10,
+    justifyContent: "space-between",
   },
   image: {
     width: ITEM_WIDTH,

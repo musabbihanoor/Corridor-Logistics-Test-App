@@ -21,10 +21,10 @@ const DetailsScreen = ({
       <MapView
         style={{ height: 300 }}
         initialRegion={{
-          latitude: lat ? lat : 25.2009,
-          longitude: lon ? lon : 55.2763,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
+          latitude: lat,
+          longitude: lon,
+          latitudeDelta: 0.5,
+          longitudeDelta: 0.5,
         }}
       >
         <Marker
@@ -47,6 +47,7 @@ const DetailsScreen = ({
         <View>
           {facilities.map((x, i) => (
             <View
+              key={i}
               style={{
                 alignItems: "center",
                 backgroundColor: "#fff",

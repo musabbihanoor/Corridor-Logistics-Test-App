@@ -1,19 +1,19 @@
 import React, { useRef, useState } from "react";
-import { View, Text } from "react-native";
-import Carousel, { Pagination } from "react-native-snap-carousel";
+import { View, Text, ScrollView } from "react-native";
+// import Carousel, { Pagination } from "react-native-snap-carousel";
 import VenueCardItem, { SLIDER_WIDTH, ITEM_WIDTH } from "./VenueCardItem";
 
 const VenueCards = ({ data, onSelect }) => {
-  const isCarousel = useRef(null);
-  const [index, setIndex] = useState(0);
+  // const isCarousel = useRef(null);
+  // const [index, setIndex] = useState(0);
 
   return (
     <View
       style={{
-        padding: 50,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        paddingVertical: 50,
       }}
     >
       <Text
@@ -22,12 +22,17 @@ const VenueCards = ({ data, onSelect }) => {
           fontSize: 28,
           fontWeight: "700",
           marginBottom: 10,
-          marginLeft: -18,
+          paddingLeft: 20,
         }}
       >
         Visit our Venues
       </Text>
-      <Carousel
+      <ScrollView horizontal style={{ paddingLeft: 20 }}>
+        {data.map((x, i) => (
+          <VenueCardItem item={x} key={i} onSelect={onSelect} />
+        ))}
+      </ScrollView>
+      {/* <Carousel
         layout="default"
         layoutCardOffset={9}
         ref={isCarousel}
@@ -40,8 +45,8 @@ const VenueCards = ({ data, onSelect }) => {
         inactiveSlideShift={0}
         useScrollView={true}
         onSnapToItem={(index) => setIndex(index)}
-      />
-      <Pagination
+      /> */}
+      {/* <Pagination
         dotsLength={data.length}
         activeDotIndex={index}
         carouselRef={isCarousel}
@@ -58,7 +63,7 @@ const VenueCards = ({ data, onSelect }) => {
         inactiveDotOpacity={0.4}
         inactiveDotScale={0.6}
         tappableDots={true}
-      />
+      /> */}
     </View>
   );
 };
