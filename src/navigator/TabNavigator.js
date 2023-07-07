@@ -11,7 +11,7 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarActiveTintColor: "blue",
+        tabBarActiveTintColor: "#0492c2",
         tabBarInactiveTintColor: "gray",
         tabBarStyle: [
           {
@@ -28,7 +28,14 @@ const TabNavigator = () => {
             iconName = "map-marker";
           }
 
-          return <FontAwesome name={iconName} size={24} color={color} />;
+          return (
+            <FontAwesome
+              name={iconName}
+              size={24}
+              color={color}
+              style={{ marginTop: 10 }}
+            />
+          );
         },
         tabBarLabel: "",
         headerShown: false,

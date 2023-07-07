@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import CarouselCardItem, { SLIDER_WIDTH, ITEM_WIDTH } from "./VenueCardItem";
 
@@ -16,6 +16,17 @@ const VenueCards = ({ data }) => {
         justifyContent: "center",
       }}
     >
+      <Text
+        style={{
+          alignSelf: "flex-start",
+          fontSize: 28,
+          fontWeight: "700",
+          marginBottom: 10,
+          marginLeft: -18,
+        }}
+      >
+        Visit our Venues
+      </Text>
       <Carousel
         layout="default"
         layoutCardOffset={9}
@@ -37,7 +48,10 @@ const VenueCards = ({ data }) => {
           height: 10,
           borderRadius: 5,
           marginHorizontal: 0,
-          backgroundColor: "rgba(0, 0, 0, 0.92)",
+          backgroundColor: "#0492c2",
+        }}
+        inactiveDotStyle={{
+          backgroundColor: "grey",
         }}
         inactiveDotOpacity={0.4}
         inactiveDotScale={0.6}
