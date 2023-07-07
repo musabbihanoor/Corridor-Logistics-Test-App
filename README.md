@@ -8,7 +8,15 @@ The application fetching Venues and their details and display them in a two sepa
 - First implementation shows the list in a `ScrollView` in form of cards, which lead user to a screen with further details and Google Map
 - Second implementation shows all the venues on a Google Map in form of custom Markers.
 
-Here are some screenshots of the app.
+#### Note
+
+I have implemented the UI according to my best understanding of the assignment. If you want me to make any changes in the assignment, I'd be happy to do so.
+
+At first I implemented the cards list through a Carousel for better user experience but after reading the requirements, I updated it to a ScrollView. The Carousel code is still there commented if you want to test it
+
+Instead of using Google Map API, I have used a react native library for Google Map for better app compatibility.
+
+## Screenshots
 
 ![Screenshot 1](https://i.ibb.co/9hP18Pq/Screenshot-2023-07-07-162114.png)
 
