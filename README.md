@@ -10,11 +10,7 @@ The application fetching Venues and their details and display them in a two sepa
 
 Here are some screenshots of the app.
 
-
-
 ![Screenshot 1](https://i.ibb.co/9hP18Pq/Screenshot-2023-07-07-162114.png)
-
-![Screenshot 2](https://i.ibb.co/vk7DP7z/Screenshot-2023-07-07-162227.png)
 
 ![Screenshot 3](https://i.ibb.co/X42rzcH/Screenshot-2023-07-07-162247.png)
 
